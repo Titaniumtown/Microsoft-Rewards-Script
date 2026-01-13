@@ -22,10 +22,6 @@
             playwright-driver.browsers
             typescript
             playwright-test
-
-            # fixes "waiting until load" issue compared to
-            # setting headless in config.json
-            xvfb-run
           ];
 
           shellHook = ''
