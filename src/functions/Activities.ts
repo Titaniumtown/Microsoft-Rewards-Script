@@ -12,6 +12,7 @@ import { Quiz } from './activities/api/Quiz'
 import { FindClippy } from './activities/api/FindClippy'
 import { DoubleSearchPoints } from './activities/api/DoubleSearchPoints'
 import { ClaimBonusPoints } from './activities/api/ClaimBonusPoints'
+import { WelcomeTour } from './activities/api/WelcomeTour'
 
 // Browser
 import { SearchOnBing } from './activities/browser/SearchOnBing'
@@ -88,6 +89,11 @@ export default class Activities {
     doClaimBonusPoints = async (): Promise<void> => {
         const claimBonusPoints = new ClaimBonusPoints(this.bot)
         await claimBonusPoints.claimBonusPoints()
+    }
+
+    doWelcomeTour = async (promotion: BasePromotion, page: Page): Promise<void> => {
+        const welcomeTour = new WelcomeTour(this.bot)
+        await welcomeTour.doWelcomeTour(promotion, page)
     }
 
     // App Activities
